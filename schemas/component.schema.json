@@ -1,0 +1,501 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "organization"
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "capability"
+        },
+        "level": {
+          "anyOf": [
+            {
+              "type": "number",
+              "const": 1
+            },
+            {
+              "type": "number",
+              "const": 2
+            },
+            {
+              "type": "number",
+              "const": 3
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type",
+        "level"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "workflow"
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "process"
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "application"
+        },
+        "lifecycle": {
+          "type": "string",
+          "enum": [
+            "plan",
+            "active",
+            "sunset",
+            "retired"
+          ]
+        },
+        "criticality": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "vendor": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type",
+        "lifecycle",
+        "criticality"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "person"
+        },
+        "email": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "technology"
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "workspaceId": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "name": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "description": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "status": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "tags": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "ownerId": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "parentId": {
+          "$ref": "#/$defs/__schema6"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/__schema7"
+        },
+        "type": {
+          "type": "string",
+          "const": "interface"
+        }
+      },
+      "required": [
+        "id",
+        "workspaceId",
+        "name",
+        "description",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt",
+        "type"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema1": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema2": {
+      "type": "string"
+    },
+    "__schema3": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "deprecated"
+      ]
+    },
+    "__schema4": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "__schema5": {
+      "$ref": "#/$defs/__schema0"
+    },
+    "__schema6": {
+      "$ref": "#/$defs/__schema0"
+    },
+    "__schema7": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$id": "https://lattice.local/schemas/component.schema.json",
+  "title": "component"
+}

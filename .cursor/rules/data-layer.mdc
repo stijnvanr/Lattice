@@ -1,0 +1,16 @@
+---
+description: Browser SQLite, Drizzle rows, integrity, and Zustand writes
+globs: src/db/**/*.ts,src/store/**/*.ts,src/data/**/*.ts
+alwaysApply: false
+---
+
+# Data layer
+
+- Engine: `src/db/client.ts`. `getEngine()` throws until `bootEngine()`. Persist via `markDirty()` (400ms debounce + hide/pagehide flush).
+- Tables: `src/db/schema.ts`. DDL: `src/db/migrate.ts`. Keep them aligned. Type-specific component fields go in `extras` JSON (`extrasFrom` / `rowToComponent` in `src/db/repository.ts`).
+- `parentId` / `ownerId` columns stay in sync with `contains` / `owned_by` rows (`upsertContains`, `upsertOwnedBy`).
+- Import remaps all IDs (`remapBundle`). Pages: `remapMentionIds`. Diagrams: `stripDanglingDiagramNodes`.
+- Seed: `src/data/seed.ts`. Northstar must `bundleSchema.safeParse` and `integrityErrors(bundle) === []`.
+- Store: after a successful write, `markDirty()` + re-hydrate. Use `toastErrors` in UI.
+
+Do not add a Node/server database. Tests that need SQLite use in-memory engines from the repo helpers, not the browser persist layer.

@@ -1,0 +1,17 @@
+---
+description: React 19 UI, Radix primitives, Tailwind 4 tokens
+globs: src/**/*.tsx,src/index.css
+alwaysApply: false
+---
+
+# React UI
+
+- Functional components. `cn()` from `src/lib/utils.ts` for class names.
+- Reuse `src/components/ui/*` (Button, Dialog, Select, Tabs, Input). Match existing CVA sizes (`h-8` default buttons).
+- Colors from CSS tokens in `src/index.css` (`bg-background`, `text-muted-foreground`, `border-border`). Type color = `componentTypeMeta[type].hex` via `TypeBadge` / `TypeDot`.
+- Catalog create/edit goes through `useWorkspace` + `draftForType` (`src/lib/draft.ts`). Type-specific fields: follow `CatalogDetailPage` `Field` layout.
+- Validation failures: `toast.error(toastErrors(result.errors))`. Do not alert().
+- Routes in `src/main.tsx`. Lazy-load only heavy canvases (Diagrams already lazy).
+- TipTap: `DocEditor`. Mentions must include `mentionType`. Do not persist `data:` images.
+
+Keep the shell compact (14px Inter, muted chrome). No new CSS framework.

@@ -1,0 +1,8 @@
+# Keep the index on src/, schemas/, scripts/. Skip build noise.
+dist/
+coverage/
+node_modules/
+.vite/
+**/*.tsbuildinfo
+**/*.map
+pnpm-lock.yaml

@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f7f7f5;
+  --foreground: #1c1c1a;
+  --card: #ffffff;
+  --card-foreground: #1c1c1a;
+  --popover: #ffffff;
+  --popover-foreground: #1c1c1a;
+  --primary: #1c1c1a;
+  --primary-foreground: #fafafa;
+  --secondary: #efefe9;
+  --secondary-foreground: #1c1c1a;
+  --muted: #efefe9;
+  --muted-foreground: #6f6f69;
+  --accent: #efefe9;
+  --accent-foreground: #1c1c1a;
+  --destructive: #dc2626;
+  --border: #e6e6e0;
+  --input: #e6e6e0;
+  --ring: #c4c4bc;
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tiptap {
+  outline: none;
+  min-height: 280px;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: var(--muted-foreground);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 1.2em 0 0.4em;
+}
+
+.tiptap h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 1.1em 0 0.35em;
+}
+
+.tiptap h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1em 0 0.3em;
+}
+
+.tiptap p {
+  margin: 0.4em 0;
+}
+
+.tiptap ul,
+.tiptap ol {
+  padding-left: 1.3rem;
+  margin: 0.4em 0;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.tiptap table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.8em 0;
+}
+
+.tiptap th,
+.tiptap td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+
+.tiptap a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.mention {
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.react-flow__node-frame,
+.react-flow__node-lane {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.lattice-map .react-flow__handle {
+  visibility: hidden !important;
+}
+
+.react-flow svg {
+  overflow: visible;
+}
+
+.react-flow__handle {
+  visibility: visible !important;
+}
+
+.react-flow__edge-path,
+.react-flow__connection-path {
+  stroke: #73736c;
+  stroke-width: 1.5;
+}

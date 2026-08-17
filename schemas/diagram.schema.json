@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/__schema0"
+    },
+    "workspaceId": {
+      "$ref": "#/$defs/__schema0"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "live",
+        "board"
+      ]
+    },
+    "query": {
+      "type": "object",
+      "properties": {
+        "preset": {
+          "type": "string",
+          "enum": [
+            "capability_map",
+            "workflow_map",
+            "application_landscape",
+            "neighborhood"
+          ]
+        },
+        "rootId": {
+          "$ref": "#/$defs/__schema0"
+        }
+      },
+      "required": [
+        "preset"
+      ],
+      "additionalProperties": false
+    },
+    "view": {
+      "type": "object",
+      "properties": {
+        "viewport": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            },
+            "zoom": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "x",
+            "y",
+            "zoom"
+          ],
+          "additionalProperties": false
+        },
+        "elk": {
+          "type": "object",
+          "properties": {
+            "direction": {
+              "type": "string",
+              "enum": [
+                "RIGHT",
+                "DOWN"
+              ]
+            }
+          },
+          "required": [
+            "direction"
+          ],
+          "additionalProperties": false
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/__schema0"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "component",
+                  "note",
+                  "group"
+                ]
+              },
+              "componentId": {
+                "$ref": "#/$defs/__schema0"
+              },
+              "position": {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "additionalProperties": false
+              },
+              "size": {
+                "type": "object",
+                "properties": {
+                  "width": {
+                    "type": "number"
+                  },
+                  "height": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "width",
+                  "height"
+                ],
+                "additionalProperties": false
+              },
+              "collapsed": {
+                "type": "boolean"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "position"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "edgeStyle": {
+          "type": "string",
+          "enum": [
+            "bezier",
+            "smoothstep"
+          ]
+        }
+      },
+      "required": [
+        "nodes"
+      ],
+      "additionalProperties": false
+    },
+    "createdAt": {
+      "$ref": "#/$defs/__schema1"
+    },
+    "updatedAt": {
+      "$ref": "#/$defs/__schema1"
+    }
+  },
+  "required": [
+    "id",
+    "workspaceId",
+    "name",
+    "kind",
+    "view",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "__schema0": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema1": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$id": "https://lattice.local/schemas/diagram.schema.json",
+  "title": "diagram"
+}

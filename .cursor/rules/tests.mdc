@@ -1,0 +1,22 @@
+---
+description: Vitest conventions for schema, integrity, graph, and repository
+globs: src/**/*.test.ts
+alwaysApply: false
+---
+
+# Tests
+
+- Vitest, Node environment, `src/**/*.test.ts` (`vite.config.ts`).
+- Import `describe`, `expect`, `it` from `vitest`.
+- Schema/metamodel tests belong in `src/schema/schema.test.ts`. Seed must parse + pass `integrityErrors`.
+- Prefer `buildSampleWorkspace()` / `buildEmptyWorkspace()` over one-off fixtures.
+- When adding a reference rule or component field, add a legal + illegal case (see `isReferenceAllowed` tests).
+- Repository tests: in-memory engine, not OPFS. Graph/layout tests stay pure.
+
+```ts
+const parsed = bundleSchema.safeParse(bundle);
+expect(parsed.success).toBe(true);
+expect(integrityErrors(bundle)).toEqual([]);
+```
+
+Run `pnpm test` for the files you touched. Do not snapshot entire Northstar JSON.

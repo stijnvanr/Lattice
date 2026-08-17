@@ -1,0 +1,18 @@
+---
+description: Lattice product invariants, stack, and Result contract
+alwaysApply: true
+---
+
+# Lattice core
+
+Local-first architecture studio. Graph is source of truth.
+
+- pnpm. Alias `@/` → `src/`. Indent 2 spaces.
+- Zod in `src/schema` is the only type source. After changing it, run `pnpm schema:export`. Never hand-edit `schemas/*.schema.json`.
+- Persistence: sql.js in the browser (OPFS, IndexedDB fallback). No server, no workspace files on disk.
+- UI → `useWorkspace` (`src/store/workspace.ts`) → `WorkspaceRepo` (`src/db/repository.ts`). Do not query Drizzle from components.
+- Every write/import returns `Result<T>` from `src/schema/result.ts`. Show `errors[].path`. Do not `throw` for validation.
+- IDs from `createId()` in `src/lib/ids.ts` (`ws_`, `cmp_`, `ref_`, `pg_`, `dia_`).
+- `parentId` ↔ `contains`; `ownerId` ↔ `owned_by`. Contains is same-type only.
+- Reuse `src/components/ui/*`. Type colors from `componentTypeMeta`, not hardcoded hex in new UI.
+- Prefer the **lattice** MCP to check edges and validate bundles. Prefer **Context7** for library docs (Zod 4, TipTap, xyflow, Drizzle).

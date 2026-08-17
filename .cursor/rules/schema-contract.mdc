@@ -1,0 +1,21 @@
+---
+description: Zod is the type source; generated JSON Schema is a build artifact
+globs: src/schema/**/*.ts,schemas/**/*.json,scripts/schema-export.ts
+alwaysApply: false
+---
+
+# Schema contract
+
+- Edit Zod in `src/schema`, then `pnpm schema:export`. `schemas/` is generated (Draft 2020-12, `$id` `https://lattice.local/schemas/{name}.schema.json`).
+- Discriminated unions on `type` for components (`src/schema/component.ts`). Shared fields stay on `componentBase`.
+- Enums live in `src/schema/common.ts`. Bump `SCHEMA_VERSION` only for breaking bundle changes; keep `METAMODEL_ID` in sync with `src/schema/metamodel.ts`.
+- `bundleSchema` is the export/import document. Integrity (FK, edge rules, cycles) is `integrityErrors` in `src/db/integrity.ts` — both must pass.
+- Field paths: `components[3].lifecycle`, not generic "invalid input".
+- Mentions: `{ id, label, mentionType }`. Images: http(s) only.
+
+```ts
+const result = componentSchema.safeParse(value);
+if (!result.success) return { ok: false, errors: fieldPathErrors(result.error) };
+```
+
+After schema edits: `pnpm schema:export && pnpm test`.

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metamodelId": {
+      "type": "string",
+      "const": "starter-v1"
+    },
+    "createdAt": {
+      "$ref": "#/$defs/__schema0"
+    },
+    "updatedAt": {
+      "$ref": "#/$defs/__schema0"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "slug",
+    "metamodelId",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "__schema0": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$id": "https://lattice.local/schemas/workspace.schema.json",
+  "title": "workspace"
+}

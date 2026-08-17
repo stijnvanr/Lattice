@@ -1,0 +1,10 @@
+﻿# Hard-block secrets and machine-local files from Agent/Tab.
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+credentials.json
+secrets.json
+
