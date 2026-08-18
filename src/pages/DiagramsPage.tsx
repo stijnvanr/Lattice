@@ -401,7 +401,7 @@ function DiagramCanvas({
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [connectOpen, setConnectOpen] = useState(false);
   const [pending, setPending] = useState<Connection | null>(null);
-  const [refType, setRefType] = useState<ReferenceType>("uses");
+  const [refType, setRefType] = useState<ReferenceType>();
   const [viaId, setViaId] = useState("none");
   const [addMode, setAddMode] = useState<"existing" | "new" | "note" | "group">("existing");
   const [componentId, setComponentId] = useState("");
@@ -558,7 +558,7 @@ function DiagramCanvas({
       const sType = byId.get(sourceCmp)?.type;
       const tType = byId.get(targetCmp)?.type;
       const legal = sType && tType ? legalReferenceTypes(sType, tType) : [];
-      setRefType(legal[0] ?? "uses");
+      setRefType(legal[0]);
       setViaId("none");
       setConnectOpen(true);
     },
@@ -789,7 +789,7 @@ function DiagramCanvas({
             </Button>
             <Button
               onClick={() => {
-                if (!pending) return;
+                if (!pending || !refType) return;
                 const source = nodes.find((n) => n.id === pending.source);
                 const target = nodes.find((n) => n.id === pending.target);
                 const sourceId = componentIdOf(source);
@@ -818,6 +818,7 @@ function DiagramCanvas({
                 );
                 setConnectOpen(false);
               }}
+              disabled={!refType}
             >
               Create
             </Button>

@@ -8,6 +8,7 @@ import {
   MoreHorizontal,
   Plus,
   Search,
+  Settings,
   Upload,
   Workflow,
 } from "lucide-react";
@@ -46,6 +47,8 @@ const nav = [
   { to: "/pages", label: "Pages", icon: BookOpen },
   { to: "/diagrams", label: "Diagrams", icon: Workflow },
 ];
+
+const settingsNav = [{ to: "/settings/metamodel", label: "Metamodel", icon: Settings }];
 
 export function AppShell() {
   const navigate = useNavigate();
@@ -133,23 +136,47 @@ export function AppShell() {
           </div>
           <div className="mt-1 text-sm text-muted-foreground">Architecture studio</div>
         </div>
-        <nav className="flex flex-1 flex-col gap-0.5 px-2">
-          {nav.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.end}
-              className={({ isActive }) =>
-                cn(
-                  "flex items-center gap-2 rounded-md px-2.5 py-1.5 text-sm",
-                  isActive ? "bg-secondary font-medium" : "text-muted-foreground hover:bg-accent",
-                )
-              }
-            >
-              <item.icon className="size-4" />
-              {item.label}
-            </NavLink>
-          ))}
+        <nav className="flex flex-1 flex-col px-2">
+          <div className="flex flex-col gap-0.5">
+            {nav.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  cn(
+                    "flex items-center gap-2 rounded-md px-2.5 py-1.5 text-sm",
+                    isActive ? "bg-secondary font-medium" : "text-muted-foreground hover:bg-accent",
+                  )
+                }
+              >
+                <item.icon className="size-4" />
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+          <div className="mt-auto border-t border-border pt-3">
+            <div className="px-2.5 pb-1 text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+              Settings
+            </div>
+            <div className="flex flex-col gap-0.5">
+              {settingsNav.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    cn(
+                      "flex items-center gap-2 rounded-md px-2.5 py-1.5 text-sm",
+                      isActive ? "bg-secondary font-medium" : "text-muted-foreground hover:bg-accent",
+                    )
+                  }
+                >
+                  <item.icon className="size-4" />
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
         </nav>
         <div className="p-3 text-[11px] text-muted-foreground">Graph is source of truth</div>
       </aside>

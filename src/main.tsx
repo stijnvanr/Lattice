@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { CatalogDetailPage } from "@/pages/CatalogDetailPage";
 import { CatalogPage } from "@/pages/CatalogPage";
 import { HomePage } from "@/pages/HomePage";
+import { MetamodelSettingsPage } from "@/pages/MetamodelSettingsPage";
 import { PagesPage } from "@/pages/PagesPage";
 import "./index.css";
 
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/catalog/:id" element={<CatalogDetailPage />} />
               <Route path="/pages" element={<PagesPage />} />
               <Route path="/pages/:id" element={<PagesPage />} />
+              <Route path="/settings/metamodel" element={<MetamodelSettingsPage />} />
               <Route
                 path="/diagrams"
                 element={
